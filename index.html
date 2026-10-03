@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Happy Birthday, Nidhi ✦</title>
+<meta name="theme-color" content="#1c1310"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Caveat:wght@500;600&display=swap" rel="stylesheet"/>
+
+<style>
+/* ---------- tokens & reset ---------- */
+:root{
+  --bg:#1c1310; --bg-2:#231914;
+  --ink:#f6efe4; --ink-dim:rgba(246,239,228,.62);
+  --gold:#e8b04b; --gold-soft:#f3d9a4;
+  --rose:#d97b8a; --rose-deep:#a84a58;
+  --paper:#f4ecdd; --paper-ink:#3a2b22; --paper-em:#a3622b;
+  --hair:rgba(232,176,75,.22);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-bounce:cubic-bezier(.34,1.56,.64,1);
+  --ease-curtain:cubic-bezier(.76,0,.24,1);
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0 }
+html{ scroll-behavior:smooth; background:var(--bg); -webkit-text-size-adjust:100% }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Lora',Georgia,serif; line-height:1.6;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(900px 520px at 50% -8%, rgba(232,176,75,.07), transparent 65%);
+}
+::selection{ background:var(--gold); color:#241a15 }
+:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; border-radius:4px }
+::-webkit-scrollbar{ width:10px }
+::-webkit-scrollbar-track{ background:transparent }
+::-webkit-scrollbar-thumb{ background:#3a2a21; border-radius:8px }
+button{ font:inherit; touch-action:manipulation }
+button:active{ transform:scale(.97) }
+
+/* ---------- shared layout ---------- */
+.page{ position:relative; z-index:1 }
+.wrap{ max-width:1080px; margin-inline:auto; padding-inline:clamp(20px,5vw,48px) }
+.sec{ padding-block:clamp(4.5rem,12vh,8.5rem) }
+.eyebrow{
+  font-family:'Fraunces',serif; font-size:.78rem; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--gold); display:inline-block;
+}
+.eyebrow::before{ content:"✦"; color:var(--rose); margin-right:.7em; font-size:.9em }
+.sec-title{
+  font-family:'Fraunces',serif; font-weight:600; line-height:1.12;
+  font-size:clamp(2rem,5.5vw,3.3rem); margin-top:.7em; letter-spacing:-.01em;
+}
+.g{ color:var(--gold) }
+.ambient{ position:fixed; inset:0; z-index:0; width:100%; height:100%; pointer-events:none }
+
+/* ---------- scroll reveal ---------- */
+.reveal{
+  opacity:0; transform:translateY(var(--reveal-y,28px));
+  transition:opacity .95s var(--ease), transform .95s var(--ease);
+  will-change:opacity,transform;
+}
+.reveal.is-in{ opacity:1; transform:translateY(0); will-change:auto }
+
+/* ---------- shared entrance ---------- */
+@keyframes fadeIn{ from{ opacity:0; transform:translateY(16px) } to{ opacity:1; transform:translateY(0) } }
+.fade-in{ opacity:0; animation:fadeIn .9s var(--ease) both; animation-delay:var(--fd,0s) }
+
+/* ================= SCROLL BARBELL ================= */
+.barbell{
+  position:fixed; top:env(safe-area-inset-top,0); left:0; right:0; height:4px;
+  z-index:60; background:rgba(232,176,75,.08); pointer-events:none;
+}
+.barbell-fill{
+  height:100%; width:0; position:relative;
+  background:linear-gradient(90deg,#a86f2e,var(--gold) 60%,var(--gold-soft));
+  box-shadow:0 0 12px rgba(232,176,75,.45);
+}
+.plate{
+  position:absolute; right:-3px; top:50%; transform:translateY(-50%);
+  width:9px; height:18px; border-radius:3px;
+  background:var(--rose-deep);
+  box-shadow:0 0 0 2px rgba(28,19,16,.9), 0 2px 8px rgba(0,0,0,.5);
+}
+
+/* ================= COVER ================= */
+.cover{ position:fixed; inset:0; z-index:50 }
+.cover.is-leaving{ pointer-events:none }
+.shade{ position:absolute; top:0; bottom:0; width:50.5%; transition:transform 1.05s var(--ease-curtain) }
+.shade-l{ left:0; background:#191110; box-shadow:inset -1px 0 0 rgba(232,176,75,.16) }
+.shade-r{ right:0; background:#1e1412; box-shadow:inset 1px 0 0 rgba(232,176,75,.16) }
+.cover.is-leaving .shade-l{ transform:translateY(-102%); transition-delay:.5s }
+.cover.is-leaving .shade-r{ transform:translateY(-102%); transition-delay:.62s }
+.cover-particles{ position:absolute; inset:0; z-index:1; pointer-events:none; transition:opacity .5s }
+.cover.is-leaving .cover-particles{ opacity:0 }
+.cover-inner{
+  position:relative; z-index:2; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:.55rem; text-align:center;
+  padding:calc(1.5rem + env(safe-area-inset-top,0px)) 1.5rem calc(1.5rem + env(safe-area-inset-bottom,0px));
+  transition:opacity .55s var(--ease), transform .55s var(--ease), filter .55s var(--ease);
+}
+.cover.is-leaving .cover-inner{ opacity:0; transform:scale(.96) translateY(-12px); filter:blur(6px) }
+.cover-inner > *{ opacity:0; animation:fadeIn .8s var(--ease) both }
+.cover-inner > *:nth-child(1){ animation-delay:.2s }
+.cover-inner > *:nth-child(2){ animation-delay:.35s }
+.cover-inner > *:nth-child(3){ animation-delay:.5s }
+.cover-inner > *:nth-child(4){ animation-delay:.85s }
+.cover-inner > *:nth-child(5){ animation-delay:1.05s }
+.cover-eyebrow{ font-family:'Fraunces',serif; font-size:.75rem; letter-spacing:.34em; text-transform:uppercase; color:var(--gold) }
+.cover-for{ font-family:'Caveat',cursive; font-size:clamp(2.3rem,7vw,3.3rem); color:var(--ink); line-height:1.15 }
+.cover-hint{ margin-top:1.4rem; color:var(--ink-dim); font-style:italic; font-size:1.02rem }
+.flame-cta{
+  background:none; border:none; cursor:pointer; color:var(--gold);
+  font-family:'Fraunces',serif; font-size:.8rem; letter-spacing:.28em; text-transform:uppercase;
+  border-bottom:1px solid rgba(232,176,75,.5); padding:.4em .2em; margin-top:.4rem;
+  transition:color .3s, letter-spacing .3s, border-color .3s;
+}
+.flame-cta:active{ color:var(--gold-soft) }
+
+/* ---------- the cake ---------- */
+.cake{ width:clamp(215px,38vw,300px); height:auto; display:block; margin-top:1rem }
+.flame-g{ cursor:pointer; touch-action:manipulation }
+.flame,.glow{ transform-box:fill-box }
+.flame{ transform-origin:50% 100%; animation:flick 1.15s ease-in-out infinite }
+@keyframes flick{
+  0%,100%{ transform:rotate(-2deg) scale(1) }
+  30%{ transform:rotate(2.4deg) scale(1.06,.94) }
+  55%{ transform:rotate(-1deg) scale(.95,1.08) }
+  80%{ transform:rotate(1.6deg) scale(1.03,.97) }
+}
+.flame-g:hover .flame{ animation-duration:.55s }
+.cake.out .flame{ animation:snuff .55s ease-in forwards }
+@keyframes snuff{
+  0%{ transform:scale(1); opacity:1 }
+  40%{ transform:scale(1.1,.7) rotate(5deg) }
+  100%{ transform:scale(.9,0) translateY(4px); opacity:0 }
+}
+.glow{ transform-origin:center; animation:glowPulse 1.6s ease-in-out infinite }
+@keyframes glowPulse{ 0%,100%{ opacity:.55; transform:scale(1) } 50%{ opacity:.85; transform:scale(1.14) } }
+.cake.out .glow{ animation:none; opacity:0; transition:opacity .4s }
+.smoke{ stroke-dasharray:1; stroke-dashoffset:1; opacity:0 }
+.cake.out .smoke{ animation:smokeUp 2s ease-out .15s forwards }
+@keyframes smokeUp{
+  0%{ stroke-dashoffset:1; opacity:0 } 15%{ opacity:.65 }
+  60%{ opacity:.4 } 100%{ stroke-dashoffset:0; opacity:0 }
+}
+
+/* ================= HERO ================= */
+.hero{
+  --base:1.5s;
+  min-height:100vh; min-height:100svh; position:relative;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:6rem 1.2rem 5.5rem;
+}
+.hero .eyebrow{ --fd:calc(var(--base) + .15s) }
+.h-title{ margin-top:1.2rem }
+.h-line{
+  display:block; font-family:'Fraunces',serif; font-weight:620; color:var(--ink);
+  font-size:clamp(2.7rem,9.5vw,6.6rem); line-height:1.02; letter-spacing:-.015em;
+}
+.pop-line{ display:inline-block }
+.pop{
+  display:inline-block; opacity:0;
+  animation:pop .65s var(--ease-bounce) both;
+  animation-delay:calc(var(--base,1.5s) + var(--i,0) * .045s);
+}
+@keyframes pop{ from{ opacity:0; transform:translateY(.7em) rotate(5deg) scale(.9) } to{ opacity:1; transform:none } }
+.h-name-wrap{ position:relative; display:inline-block; margin-top:.06em }
+.h-name{
+  font-family:'Fraunces',serif; font-style:italic; font-weight:580; color:var(--gold);
+  font-size:clamp(3.4rem,14vw,9.4rem); line-height:1.06; letter-spacing:-.02em;
+}
+.h-underline{ position:absolute; left:1%; bottom:-.1em; width:98%; height:.16em; overflow:visible }
+.h-underline path{
+  fill:none; stroke:var(--gold); stroke-width:4; stroke-linecap:round; opacity:.9;
+  stroke-dasharray:1; stroke-dashoffset:1;
+  animation:draw 1.2s var(--ease) both; animation-delay:calc(var(--base) + 1.55s);
+}
+@keyframes draw{ to{ stroke-dashoffset:0 } }
+.hero-sub{
+  --fd:calc(var(--base) + 1.25s);
+  margin-top:2.2rem; color:var(--ink-dim); font-style:italic;
+  font-size:clamp(1rem,2.4vw,1.2rem); max-width:44ch;
+}
+.cue{
+  --fd:calc(var(--base) + 2.3s);
+  position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+  color:var(--ink-dim); font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+  text-align:center; width:max-content;
+}
+.cue svg{ display:block; margin:.55rem auto 0; animation:dip 1.8s ease-in-out infinite }
+@keyframes dip{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(6px) } }
+
+/* balloons */
+.balloons{ position:absolute; inset:0; pointer-events:none; z-index:-1 }
+.balloon-wrap{ position:absolute; opacity:0; animation:fadeIn 1.2s var(--ease) both; animation-delay:calc(var(--base) + var(--bd,0s)) }
+.balloon{ display:block; animation:bob 6s ease-in-out var(--bob,0s) infinite alternate }
+@keyframes bob{ from{ transform:translateY(-8px) rotate(-2deg) } to{ transform:translateY(10px) rotate(2.5deg) } }
+
+/* ================= MARQUEE ================= */
+.marquee{
+  transform:rotate(-1.4deg); width:104vw; margin-left:-2vw;
+  border-block:1px solid var(--hair); background:rgba(232,176,75,.045); overflow:hidden;
+}
+.mq-track{ display:flex; width:max-content; animation:mq 28s linear infinite }
+.mq-g{ display:flex; align-items:center }
+.mq-g span{
+  font-family:'Fraunces',serif; font-weight:600; white-space:nowrap;
+  font-size:clamp(.95rem,2.4vw,1.35rem); letter-spacing:.22em;
+  color:var(--gold); padding:.85em 0;
+}
+.mq-g i{ font-style:normal; color:var(--rose); padding-inline:1.4em; font-size:.8em }
+@keyframes mq{ to{ transform:translateX(-50%) } }
+
+/* ================= TRUTHS ================= */
+.truths{ margin-top:clamp(2.2rem,6vw,3.6rem) }
+.truth{ padding-block:clamp(1.7rem,4.5vw,2.9rem) }
+.truth .rule{
+  height:1px; background:var(--hair); transform:scaleX(0); transform-origin:left;
+  transition:transform 1.5s var(--ease) .25s;
+}
+.truth.is-in .rule{ transform:scaleX(1) }
+.t-idx{ display:block; font-family:'Caveat',cursive; font-size:1.35rem; color:var(--gold); margin-bottom:.45rem }
+.t-text{
+  font-family:'Fraunces',serif; font-weight:530; letter-spacing:-.01em;
+  font-size:clamp(1.5rem,4.3vw,2.9rem); line-height:1.24; max-width:24ch;
+}
+.truth.alt{ text-align:right }
+.truth.alt .rule{ transform-origin:right }
+.truth.alt .t-text{ margin-left:auto }
+.truths-close{ margin-top:clamp(2.4rem,6vw,3.6rem); text-align:center }
+.truths-close p{
+  font-style:italic; color:var(--ink-dim); line-height:1.8;
+  font-size:clamp(1.05rem,2.6vw,1.32rem); max-width:44ch; margin-inline:auto;
+}
+.truths-close .g{ font-style:italic }
+
+/* ================= LETTER ================= */
+.letter-band{ background:var(--bg-2); border-block:1px solid rgba(232,176,75,.15) }
+.paper{
+  background:var(--paper); color:var(--paper-ink);
+  max-width:700px; margin:2.8rem auto 0;
+  padding:clamp(2rem,5.5vw,3.6rem) clamp(1.5rem,5vw,3.4rem) clamp(2.2rem,5vw,3rem);
+  border-radius:8px; position:relative;
+  box-shadow:inset 0 0 46px rgba(101,67,33,.1), 0 2px 0 rgba(0,0,0,.18), 0 30px 70px -25px rgba(0,0,0,.6);
+  transform:rotate(-1.3deg); transition:transform 1.3s var(--ease) .15s;
+}
+.reveal.is-in .paper{ transform:rotate(-.4deg) }
+.seal{
+  position:absolute; top:-24px; right:clamp(18px,6vw,42px);
+  width:58px; height:58px; transform:rotate(-9deg);
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));
+}
+.letter-head{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap }
+.script{ font-family:'Caveat',cursive; font-size:1.65rem; color:var(--rose-deep) }
+.letter-date{ font-size:.66rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(51,37,29,.55) }
+.letter-rule{ height:1px; background:rgba(51,37,29,.16); margin:1.1rem 0 .3rem }
+.letter-first{
+  font-family:'Fraunces',serif; font-weight:600; color:#2e211a;
+  font-size:clamp(1.4rem,3.4vw,1.85rem); margin:.5rem 0 .4rem;
+}
+.paper p.body{ font-size:clamp(1rem,2.4vw,1.07rem); line-height:1.92; margin-top:1.15em }
+.paper em{ color:inherit }
+.paper .gold{ color:var(--paper-em) }
+.sign{ text-align:right; margin-top:2.2rem; font-family:'Caveat',cursive }
+.sign-line{ display:block; font-size:1.25rem; color:rgba(58,43,34,.6) }
+.sign-name{ display:block; font-size:2.5rem; line-height:1.15; color:var(--rose-deep); margin-top:.1rem; transform:rotate(-1.5deg) }
+.paper-foot{ text-align:center; margin-top:2.6rem }
+.paper-foot span{ font-family:'Caveat',cursive; font-size:1.55rem; color:var(--ink-dim) }
+
+/* ================= WISHES ================= */
+.wish-list{ margin-top:clamp(2rem,6vw,3.4rem) }
+.wish{
+  display:flex; justify-content:space-between; align-items:center; gap:clamp(1.2rem,4vw,3rem);
+  padding-block:clamp(1.6rem,4vw,2.6rem); border-top:1px solid var(--hair);
+}
+.wish:last-child{ border-bottom:1px solid var(--hair) }
+.wish.rev{ flex-direction:row-reverse }
+.w-word{
+  display:flex; align-items:center; gap:.55em;
+  font-family:'Fraunces',serif; font-style:italic; font-weight:560;
+  font-size:clamp(2rem,6vw,3.6rem); line-height:1.1;
+  transition:color .5s var(--ease), transform .5s var(--ease);
+}
+.wish.rev .w-word{ flex-direction:row-reverse }
+.w-ico{ width:clamp(30px,4.5vw,42px); height:auto; color:var(--gold); flex-shrink:0; transition:transform .5s var(--ease-bounce) }
+.w-note{ max-width:36ch; color:var(--ink-dim); font-size:clamp(.98rem,2.3vw,1.12rem); line-height:1.75 }
+.wish.rev .w-note{ text-align:right }
+@media (hover:hover){
+  .wish:hover .w-word{ color:var(--gold); transform:translateX(6px) }
+  .wish.rev:hover .w-word{ transform:translateX(-6px) }
+  .wish:hover .w-ico{ transform:rotate(-14deg) scale(1.12) }
+  .marquee:hover .mq-track{ animation-play-state:paused }
+  .flame-cta:hover{ color:var(--gold-soft); border-color:var(--gold-soft); letter-spacing:.34em }
+  .warm-btn:hover{ background:var(--ink); color:#241a15; border-color:var(--ink); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.35) }
+}
+.wish:active .w-word{ color:var(--gold) }
+
+/* ================= GYM ================= */
+.gym-band{ background:var(--bg-2); border-block:1px solid rgba(232,176,75,.15) }
+.gym-stage{
+  margin-top:clamp(2rem,6vw,3.2rem);
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+}
+.rep-btn{
+  background:none; border:none; cursor:pointer; color:var(--gold);
+  padding:1rem 1.4rem; border-radius:20px;
+  transition:transform .3s var(--ease-bounce);
+}
+.rep-btn:active{ transform:scale(.93) }
+.db{
+  width:clamp(175px,54vw,255px); height:auto; display:block;
+  transform-origin:87% 50%; will-change:transform;
+  filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));
+  animation:idle 3.4s ease-in-out infinite;
+}
+@keyframes idle{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-5px) } }
+.db.curling{ animation:curl .7s var(--ease-bounce) }
+@keyframes curl{
+  0%{ transform:rotate(0) }
+  42%{ transform:rotate(27deg) }
+  68%{ transform:rotate(-4deg) }
+  100%{ transform:rotate(0) }
+}
+.rep-count{
+  font-family:'Fraunces',serif; font-weight:640; line-height:1;
+  font-size:clamp(2.4rem,9vw,3.6rem); color:var(--ink); margin-top:.4rem;
+  min-width:3.5rem;
+}
+.rep-label{
+  font-family:'Fraunces',serif; font-size:.68rem; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--ink-dim); margin-top:.4rem;
+}
+.rep-msg{
+  font-family:'Caveat',cursive; font-size:clamp(1.4rem,4.5vw,1.65rem);
+  color:var(--rose); min-height:2.4rem; margin-top:.55rem; transition:opacity .3s;
+  max-width:30ch;
+}
+.gym-lines{ max-width:60ch; margin:clamp(1.6rem,5vw,2.6rem) auto 0; display:grid; gap:1.35rem; text-align:center }
+.gym-lines p{ font-size:clamp(1rem,2.4vw,1.15rem); color:var(--ink-dim); line-height:1.85 }
+.gym-lines .g{ font-style:italic }
+.gym-close{
+  margin-top:clamp(1.8rem,5vw,2.6rem); text-align:center;
+  font-family:'Caveat',cursive; font-size:clamp(1.4rem,4.5vw,1.75rem); color:var(--gold);
+}
+
+/* ================= FINALE ================= */
+.finale{ position:relative; overflow:hidden; min-height:82vh; display:flex; align-items:center }
+.hearts{ position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:2 }
+.heart{ position:absolute; bottom:-30px; will-change:transform,opacity; animation:rise var(--dur,4s) ease-out forwards }
+.heart svg{ display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,.3)) }
+@keyframes rise{
+  0%{ transform:translate(0,0) rotate(0deg); opacity:0 }
+  12%{ opacity:1 }
+  100%{ transform:translate(var(--dx,0px),-58vh) rotate(var(--rot,0deg)); opacity:0 }
+}
+.finale .wrap{ position:relative; z-index:1; text-align:center; width:100% }
+.finale-title{
+  font-family:'Fraunces',serif; font-weight:600; line-height:1.1; letter-spacing:-.015em;
+  font-size:clamp(2.4rem,7.5vw,5.2rem);
+}
+.finale-title .g{ font-style:italic }
+.finale-sub{
+  margin:1.5rem auto 0; color:var(--ink-dim); max-width:52ch;
+  font-size:clamp(1rem,2.4vw,1.18rem); line-height:1.85;
+}
+.warm-btn{
+  margin-top:2.8rem; cursor:pointer; border-radius:999px;
+  font-family:'Fraunces',serif; font-weight:600; font-size:.92rem;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink); background:transparent; border:1px solid rgba(246,239,228,.4);
+  padding:1.1em 2.4em;
+  transition:background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+}
+.warm-btn:active{ background:var(--ink); color:#241a15; border-color:var(--ink); transform:translateY(0) scale(.97) }
+.warm-note{
+  margin-top:1.2rem; font-family:'Caveat',cursive; font-size:1.35rem; color:var(--rose);
+  opacity:0; transition:opacity .6s var(--ease);
+}
+.warm-note.show{ opacity:1 }
+
+/* ================= FOOTER ================= */
+.foot{
+  border-top:1px solid var(--hair);
+  padding:2.2rem 1rem calc(3rem + env(safe-area-inset-bottom,0px));
+  text-align:center; color:var(--ink-dim); font-size:.85rem; letter-spacing:.06em;
+}
+.foot .g{ font-style:italic }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:720px){
+  .hero{ padding:4.5rem 1rem 4.5rem }
+  .hero-sub{ margin-top:1.6rem }
+  .cake{ width:clamp(165px,52vw,220px) }
+  .cover-inner{ gap:.35rem }
+  .cover-hint{ margin-top:.8rem; font-size:.95rem }
+  .cue span{ font-size:.66rem }
+  .mq-g span{ letter-spacing:.16em }
+  .t-text{ max-width:100% }
+  .paper{ margin-top:2.4rem }
+  .sign-name{ font-size:2.05rem }
+  .wish,.wish.rev{ flex-direction:column; align-items:flex-start; gap:.8rem }
+  .wish .w-note,.wish.rev .w-note{ text-align:left; max-width:100% }
+  .balloon-wrap:nth-child(3),.balloon-wrap:nth-child(4){ display:none }
+  .finale-sub{ padding-inline:.25rem }
+}
+@media (max-height:640px){
+  .cake{ width:170px }
+  .cover-for{ font-size:1.9rem }
+}
+
+/* ================= REDUCED MOTION ================= */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important }
+  html{ scroll-behavior:auto }
+}
+</style>
+</head>
+<body>
+<noscript>
+  <p style="color:#f6efe4;text-align:center;padding:3rem 1rem;font-family:Georgia,serif">
+    Happy birthday, Nidhi — this little page needs JavaScript to light its candle. ✦
+  </p>
+</noscript>
+<div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef, useCallback } = React;
+
+/* ============================================================
+   Environment & confetti helpers
+============================================================ */
+const REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const IS_MOBILE = () => window.innerWidth < 720;
+const PALETTE = ['#f6efe4', '#e8b04b', '#d97b8a', '#f3d9a4', '#c96f6f'];
+const CONFETTI_OK = () => typeof confetti === 'function';
+/* lighter particle counts on phones — keeps everything at 60fps */
+const mScale = (n) => Math.round(n * (IS_MOBILE() ? .65 : 1));
+
+let heartShape = null;
+function getHeart() {
+  if (heartShape) return heartShape;
+  try {
+    if (CONFETTI_OK() && confetti.shapeFromPath) {
+      heartShape = confetti.shapeFromPath({
+        path: 'M167 72c19,-38 37,-56 75,-56 42,0 76,33 76,75 0,76 -76,151 -151,227 -76,-76 -151,-151 -151,-227 0,-42 33,-75 75,-75 38,0 57,18 76,56z'
+      });
+    }
+  } catch (e) { /* confetti unavailable — the page still works without it */ }
+  return heartShape;
+}
+
+function spark() {
+  if (!CONFETTI_OK() || REDUCED) return;
+  confetti({ particleCount: 14, spread: 50, startVelocity: 16, gravity: .6, ticks: 110, scalar: .7,
+    origin: { x: .5, y: .42 }, colors: ['#f2c76e', '#ffe9bd', '#f6efe4'] });
+}
+
+function cannons() {
+  if (!CONFETTI_OK()) return;
+  if (REDUCED) {
+    confetti({ particleCount: 40, spread: 90, startVelocity: 30, origin: { y: .6 }, colors: PALETTE, shapes: ['circle'], ticks: 180 });
+    return;
+  }
+  confetti({ particleCount: mScale(75), angle: 60,  spread: 60, startVelocity: 55, origin: { x: 0, y: .72 }, colors: PALETTE, shapes: ['circle', 'star'], ticks: 250 });
+  confetti({ particleCount: mScale(75), angle: 120, spread: 60, startVelocity: 55, origin: { x: 1, y: .72 }, colors: PALETTE, shapes: ['circle', 'star'], ticks: 250 });
+  setTimeout(() => confetti({ particleCount: mScale(120), spread: 110, startVelocity: 42, origin: { y: .55 }, colors: PALETTE, shapes: ['circle', 'star'], ticks: 230 }), 240);
+}
+
+function fireworkBurst() {
+  if (!CONFETTI_OK() || REDUCED) return;
+  confetti({
+    particleCount: mScale(55), spread: 360, startVelocity: 26, gravity: .65, scalar: .9, ticks: 200,
+    origin: { x: .15 + Math.random() * .7, y: .18 + Math.random() * .3 },
+    colors: PALETTE, shapes: Math.random() > .5 ? ['star', 'circle'] : ['circle'],
+  });
+}
+
+function repBurst(origin) {
+  if (!CONFETTI_OK() || REDUCED) return;
+  confetti({ particleCount: mScale(45), spread: 75, startVelocity: 28, gravity: .7, ticks: 180, scalar: .9,
+    origin, colors: PALETTE, shapes: ['circle', 'star'] });
+}
+
+function heartBurst(origin) {
+  if (!CONFETTI_OK() || REDUCED) return;
+  const heart = getHeart();
+  const shapes = heart ? [heart] : undefined;
+  confetti({ particleCount: mScale(16), spread: 70, startVelocity: 26, gravity: .5, decay: .93, ticks: 190,
+    scalar: 2, shapes, colors: ['#f6efe4', '#f3d9a4', '#d97b8a'], origin });
+  setTimeout(() => confetti({ particleCount: mScale(9), spread: 110, startVelocity: 13, gravity: .4, ticks: 160,
+    scalar: 1.3, shapes, colors: ['#e8b04b', '#f6efe4'],
+    origin: { x: origin.x, y: Math.max(0, origin.y - .06) } }), 170);
+}
+
+/* ============================================================
+   Hooks
+============================================================ */
+function useReveal(threshold = 0.16) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) { setInView(true); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { setInView(true); io.disconnect(); } });
+    }, { threshold, rootMargin: '0px 0px -8% 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return [ref, inView];
+}
+
+function Reveal({ children, as: Tag = 'div', className = '', delay = 0, y = 28, style }) {
+  const [ref, inView] = useReveal();
+  return (
+    <Tag ref={ref} className={`reveal ${inView ? 'is-in' : ''} ${className}`}
+      style={{ ...style, transitionDelay: `${delay}ms`, '--reveal-y': `${y}px` }}>
+      {children}
+    </Tag>
+  );
+}
+
+/* ============================================================
+   Ambient canvas — drifting golden dust (auto-thins on phones)
+============================================================ */
+function Ambient({ className = 'ambient', density = 22, colors = ['#e8b04b'], alpha = .5 }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (REDUCED) return;
+    const canvas = ref.current;
+    const ctx = canvas.getContext('2d');
+    let raf, W, H;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const resize = () => {
+      const r = canvas.getBoundingClientRect();
+      W = canvas.width = Math.max(1, r.width * dpr);
+      H = canvas.height = Math.max(1, r.height * dpr);
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    const count = Math.max(8, Math.round(density * (IS_MOBILE() ? .55 : 1)));
+    const spawn = (init) => ({
+      x: Math.random() * W,
+      y: init ? Math.random() * H : H + 12 * dpr,
+      r: (Math.random() * 1.5 + .5) * dpr,
+      s: (Math.random() * .4 + .15) * dpr,
+      a: (Math.random() * .5 + .25) * alpha,
+      c: colors[(Math.random() * colors.length) | 0],
+      ph: Math.random() * Math.PI * 2,
+    });
+    const P = [];
+    for (let i = 0; i < count; i++) P.push(spawn(true));
+    const tick = () => {
+      ctx.clearRect(0, 0, W, H);
+      for (const p of P) {
+        p.y -= p.s; p.ph += .012;
+        if (p.y < -14) Object.assign(p, spawn(false));
+        ctx.globalAlpha = p.a * (.65 + .35 * Math.sin(p.ph * 1.7));
+        ctx.fillStyle = p.c;
+        ctx.beginPath();
+        ctx.arc(p.x + Math.sin(p.ph) * 12 * dpr, p.y, p.r, 0, 6.283);
+        ctx.fill();
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize); };
+  }, []);
+  return <canvas ref={ref} className={className} aria-hidden="true"></canvas>;
+}
+
+/* ============================================================
+   Small shared pieces
+============================================================ */
+function Pop({ text, base = 0, className = '' }) {
+  return (
+    <span className={`pop-line ${className}`} aria-hidden="true">
+      {Array.from(text).map((ch, i) => (
+        <span key={i} className="pop" style={{ '--i': String(i + base) }}>
+          {ch === ' ' ? '\u00A0' : ch}
+        </span>
+      ))}
+    </span>
+  );
+}
+
+function Icon({ name }) {
+  const p = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' };
+  if (name === 'sun') return (
+    <svg className="w-ico" viewBox="0 0 24 24" {...p}>
+      <circle cx="12" cy="12" r="4.2"/>
+      <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4L19 19M19 5l-1.6 1.6M6.6 17.4L5 19"/>
+    </svg>
+  );
+  if (name === 'leaf') return (
+    <svg className="w-ico" viewBox="0 0 24 24" {...p}>
+      <path d="M4 20C4 11 10 5 20 4c1 10-5 16-14 16z"/>
+      <path d="M4 20c3-5 7-9 12-12"/>
+    </svg>
+  );
+  if (name === 'dumbbell') return (
+    <svg className="w-ico" viewBox="0 0 24 24" {...p}>
+      <path d="M2.5 9.5v5M5.5 7.5v9M18.5 7.5v9M21.5 9.5v5M5.5 12h13"/>
+    </svg>
+  );
+  return (
+    <svg className="w-ico" viewBox="0 0 24 24" {...p}>
+      <path d="M12 3.5l1.8 5.7 5.7 1.8-5.7 1.8-1.8 5.7-1.8-5.7-5.7-1.8 5.7-1.8z"/>
+      <path d="M19 3v3M20.5 4.5h-3"/>
+    </svg>
+  );
+}
+
+function Balloons() {
+  const B = [
+    { x: '7%',  top: '18%', w: 58, c: '#d97b8a', bd: '.1s', bob: '0s'   },
+    { x: '85%', top: '14%', w: 72, c: '#e8b04b', bd: '.3s', bob: '.8s'  },
+    { x: '76%', top: '60%', w: 44, c: '#f3d9a4', bd: '.5s', bob: '1.6s' },
+    { x: '13%', top: '64%', w: 52, c: '#b95c6d', bd: '.2s', bob: '2.2s' },
+  ];
+  return (
+    <div className="balloons" aria-hidden="true">
+      {B.map((o, i) => (
+        <div key={i} className="balloon-wrap" style={{ left: o.x, top: o.top, '--bd': o.bd }}>
+          <svg className="balloon" width={o.w} height={o.w * 1.83} viewBox="0 0 60 110" style={{ '--bob': o.bob }}>
+            <path d="M30 4C46 4 54 18 54 32 54 48 42 62 30 62 18 62 6 48 6 32 6 18 14 4 30 4Z" fill={o.c} opacity=".85"/>
+            <path d="M30 62l-4 6h8z" fill={o.c} opacity=".85"/>
+            <path d="M30 68c-4 12 6 20 0 38" stroke="rgba(246,239,228,.4)" fill="none" strokeWidth="1.5" strokeLinecap="round"/>
+            <ellipse cx="22" cy="22" rx="6" ry="9" fill="rgba(255,255,255,.25)" transform="rotate(-18 22 22)"/>
+          </svg>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ============================================================
+   Scroll progress — a barbell loading across the top
+============================================================ */
+function BarBell() {
+  const [p, setP] = useState(0);
+  useEffect(() => {
+    let raf = null;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        setP(max > 0 ? Math.min(1, h.scrollTop / max) : 0);
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => { window.removeEventListener('scroll', onScroll); if (raf) cancelAnimationFrame(raf); };
+  }, []);
+  return (
+    <div className="barbell" aria-hidden="true">
+      <div className="barbell-fill" style={{ width: `${(p * 100).toFixed(2)}%` }}>
+        <span className="plate"></span>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   Cover — the cake & the candle
+============================================================ */
+function Cake({ lit, onBlow }) {
+  return (
+    <svg className={`cake ${lit ? 'lit' : 'out'}`} viewBox="0 0 260 236" role="img" aria-label="A birthday cake with one lit candle">
+      <defs>
+        <filter id="softBlur" x="-120%" y="-120%" width="340%" height="340%">
+          <feGaussianBlur stdDeviation="7"/>
+        </filter>
+      </defs>
+
+      <ellipse cx="130" cy="212" rx="94" ry="10" fill="rgba(0,0,0,.35)"/>
+      <ellipse cx="130" cy="209" rx="94" ry="10" fill="none" stroke="rgba(232,176,75,.5)" strokeWidth="1.4"/>
+
+      <rect x="52" y="154" width="156" height="56" rx="10" fill="#43302a"/>
+      <rect x="52" y="150" width="156" height="18" rx="9" fill="#f4ecdd"/>
+      <circle cx="68" cy="168" r="7" fill="#f4ecdd"/><circle cx="92" cy="170" r="9" fill="#f4ecdd"/>
+      <circle cx="116" cy="167" r="6" fill="#f4ecdd"/><circle cx="142" cy="170" r="9" fill="#f4ecdd"/>
+      <circle cx="166" cy="168" r="7" fill="#f4ecdd"/><circle cx="190" cy="170" r="8" fill="#f4ecdd"/>
+      <rect x="104" y="166" width="9" height="16" rx="4.5" fill="#f4ecdd"/>
+      <rect x="176" y="166" width="8" height="12" rx="4" fill="#f4ecdd"/>
+
+      <rect x="78" y="102" width="104" height="52" rx="9" fill="#57392e"/>
+      <rect x="78" y="98" width="104" height="16" rx="8" fill="#f4ecdd"/>
+      <circle cx="94" cy="113" r="6" fill="#f4ecdd"/><circle cx="114" cy="115" r="8" fill="#f4ecdd"/>
+      <circle cx="136" cy="112" r="5" fill="#f4ecdd"/><circle cx="156" cy="115" r="7" fill="#f4ecdd"/>
+      <circle cx="172" cy="113" r="5.5" fill="#f4ecdd"/>
+      <rect x="126" y="112" width="8" height="14" rx="4" fill="#f4ecdd"/>
+
+      <circle cx="58" cy="204" r="4.5" fill="#d97b8a"/>
+      <circle cx="202" cy="204" r="4.5" fill="#d97b8a"/>
+      <circle cx="188" cy="207" r="3" fill="#e8b04b"/>
+
+      <rect x="124" y="60" width="12" height="40" rx="4" fill="#f6efe4"/>
+      <rect x="124" y="70" width="12" height="5" fill="#d97b8a"/>
+      <rect x="124" y="82" width="12" height="5" fill="#d97b8a"/>
+      <rect x="128.8" y="54" width="2.4" height="8" rx="1.2" fill="#6b4a3a"/>
+
+      <path className="smoke" pathLength="1"
+        d="M130 52 C 124 44, 137 37, 131 26 C 126 17, 135 11, 130 2"
+        fill="none" stroke="rgba(210,205,200,.6)" strokeWidth="2.4" strokeLinecap="round"/>
+
+      <g className="flame-g" onClick={onBlow} aria-hidden="true">
+        <circle className="glow" cx="130" cy="46" r="15" fill="#f2c76e" filter="url(#softBlur)"/>
+        <path className="flame" d="M130 22 C 138 33, 143 41, 143 48 A 13 13 0 0 1 117 48 C 117 41, 122 33, 130 22 Z" fill="#f2a65a"/>
+        <path className="flame" d="M130 36 C 134 42, 137 46, 137 51 A 7 7 0 0 1 123 51 C 123 46, 126 42, 130 36 Z" fill="#ffe9bd"/>
+        <circle cx="130" cy="44" r="28" fill="transparent"/>
+      </g>
+    </svg>
+  );
+}
+
+function Cover({ onBlown, onGone }) {
+  const [lit, setLit] = useState(true);
+  const [leaving, setLeaving] = useState(false);
+
+  const blow = useCallback(() => {
+    if (!lit) return;
+    setLit(false);
+    spark();
+    setTimeout(cannons, 700);
+    setTimeout(() => { setLeaving(true); onBlown(); }, 1500);
+    setTimeout(onGone, 3300);
+  }, [lit, onBlown, onGone]);
+
+  return (
+    <div className={`cover ${leaving ? 'is-leaving' : ''}`} aria-label="Birthday introduction">
+      <div className="shade shade-l" aria-hidden="true"></div>
+      <div className="shade shade-r" aria-hidden="true"></div>
+      <Ambient className="cover-particles" density={26} colors={['#e8b04b', '#f2c76e', '#d97b8a']} alpha={.55}/>
+      <div className="cover-inner">
+        <p className="cover-eyebrow">a little corner of the internet, made just for today</p>
+        <p className="cover-for">for Nidhi ✦</p>
+        <Cake lit={lit} onBlow={blow}/>
+        <p className="cover-hint">{lit ? 'close your eyes, make a wish…' : 'wish received ✦'}</p>
+        {lit && <button className="flame-cta" onClick={blow}>tap the flame to begin</button>}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   Hero
+============================================================ */
+function Hero() {
+  return (
+    <header className="hero">
+      <Balloons/>
+      <p className="eyebrow fade-in">today we celebrate you</p>
+      <h1 className="h-title" aria-label="Happy Birthday, Nidhi">
+        <span className="h-line" aria-hidden="true"><Pop text="Happy" base={0}/></span>
+        <span className="h-line" aria-hidden="true"><Pop text="Birthday," base={5}/></span>
+        <span className="h-name-wrap" aria-hidden="true">
+          <Pop text="Nidhi" base={14} className="h-name"/>
+          <svg className="h-underline" viewBox="0 0 300 20" preserveAspectRatio="none">
+            <path pathLength="1" vectorEffect="non-scaling-stroke" d="M6 13 C 70 3, 150 19, 294 7"/>
+          </svg>
+        </span>
+      </h1>
+      <p className="hero-sub fade-in">stronger than you know, braver than you feel — and so deeply worth celebrating.</p>
+      <div className="cue fade-in" aria-hidden="true">
+        <span>scroll — there’s a letter for you</span>
+        <svg width="18" height="26" viewBox="0 0 18 26" fill="none">
+          <path d="M9 2v18m0 0l-6-6m6 6l6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+    </header>
+  );
+}
+
+function Marquee() {
+  const items = [];
+  for (let i = 0; i < 4; i++) items.push('HAPPY BIRTHDAY', 'NIDHI');
+  const Group = () => (
+    <div className="mq-g">
+      {items.map((t, i) => (
+        <React.Fragment key={i}><span>{t}</span><i>✦</i></React.Fragment>
+      ))}
+    </div>
+  );
+  return (
+    <div className="marquee" aria-hidden="true">
+      <div className="mq-track"><Group/><Group/></div>
+    </div>
+  );
+}
+
+/* ============================================================
+   Truths
+============================================================ */
+const TRUTHS = [
+  { idx: 'no. 01', pre: 'You’ve made it through every hard day so far — that’s not luck, ', g: 'that’s you.', post: '' },
+  { idx: 'no. 02', pre: 'You already train the rarest muscle there is — ', g: 'showing up anyway.', post: '' },
+  { idx: 'no. 03', pre: 'Whatever this year asks of you, you’ve already proven you’re ', g: 'equal to it.', post: '' },
+];
+
+function Truths() {
+  return (
+    <section className="sec">
+      <div className="wrap">
+        <Reveal><span className="eyebrow">before anything else — a few true things</span></Reveal>
+        <div className="truths">
+          {TRUTHS.map((t, i) => (
+            <Reveal key={i} className={`truth ${i % 2 ? 'alt' : ''}`} delay={i * 60}>
+              <div className="rule" aria-hidden="true"></div>
+              <span className="t-idx">{t.idx}</span>
+              <p className="t-text">{t.pre}<span className="g">{t.g}</span>{t.post}</p>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="truths-close">
+          <p>This year isn’t asking you to become someone new. It’s inviting you to become even <span className="g">more of who you already are</span>.</p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   The Letter
+============================================================ */
+function Seal() {
+  return (
+    <svg className="seal" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="26" fill="#a84a58"/>
+      <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(0,0,0,.25)" strokeWidth="2"/>
+      <circle cx="32" cy="32" r="19" fill="none" stroke="rgba(244,236,221,.35)" strokeWidth="1.5"/>
+      <text x="32" y="37" textAnchor="middle" fontFamily="Fraunces, Georgia, serif"
+            fontStyle="italic" fontSize="15" fill="#f4ecdd">H·J</text>
+    </svg>
+  );
+}
+
+function LetterBand() {
+  return (
+    <section className="letter-band">
+      <div className="wrap sec">
+        <Reveal><span className="eyebrow">and now — a letter I’ve been meaning to write</span></Reveal>
+
+        <Reveal y={46}>
+          <article className="paper" aria-label="A birthday letter for Nidhi">
+            <Seal/>
+            <div className="letter-head">
+              <span className="script">for Nidhi</span>
+              <span className="letter-date">written on your birthday</span>
+            </div>
+            <div className="letter-rule" aria-hidden="true"></div>
+
+            <Reveal as="p" className="letter-first" y={18}>Hey, happy birthday, Nidhi 🎂</Reveal>
+
+            <Reveal as="p" className="body" delay={40}>It’s honestly been such a long time since we properly talked, and I’m sorry for disappearing again. I’ve thought about reaching out a few times, but I never really knew what to say.</Reveal>
+
+            <Reveal as="p" className="body" delay={40}>There’s something I’ve never properly told you, though. Back in 2022, I genuinely had a huge crush on you. You probably already knew that, but I was honestly pretty immature about it back then. I liked you a lot, and looking back, I can admit that sometimes I was way too attached and desperate about it. That was my mistake, and I’ve grown a lot since then.</Reveal>
+
+            <Reveal as="p" className="body" delay={40}>I never really wanted to force anything or turn it into a relationship, but I definitely had feelings for you. And even now, I can still appreciate the things I always thought were beautiful about you. You’ve always been gorgeous, and your eyes <em className="gold">ESPECIALLY</em>. You have those kind of <em>deer-like eyes</em> that I always noticed. I hope that doesn’t sound weird, haha.</Reveal>
+
+            <Reveal as="p" className="body" delay={40}>But honestly, I’m not bringing any of this up to make things awkward or to change what we have now. Quite the opposite. I really value the friendship and the understanding we have, and I don’t want to ruin that. <em className="gold">We were younger, we made mistakes, and somehow we grew up along the way.</em></Reveal>
+
+            <Reveal as="p" className="body" delay={40}>Thank you for being a friend, for listening to me, and for teaching me things without even realizing it. <em>I’m genuinely grateful for that.</em></Reveal>
+
+            <Reveal as="p" className="body" delay={40}>I hope life has been treating you well, and I hope this year brings you a lot of happiness, peace, and good things. You deserve to enjoy your life and <em className="gold">keep becoming the person you want to be</em>.</Reveal>
+
+            <Reveal as="p" className="body" delay={40}>Anyway, happy birthday again. Take care of yourself, and whenever you need someone to talk to, you know where to find me. 🤍</Reveal>
+
+            <Reveal as="div" className="sign" delay={80}>
+              <span className="sign-line">— always in your corner,</span>
+              <span className="sign-name">From Hasan Jihan</span>
+            </Reveal>
+          </article>
+        </Reveal>
+
+        <Reveal className="paper-foot" delay={150}>
+          <span>no pressure to reply — just know someone out here is proud of you.</span>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   Wishes
+============================================================ */
+const WISHES = [
+  { t: 'Strength',    icon: 'dumbbell', note: 'the kind you build rep by rep in the gym — and the kind you quietly carry into every hard day.' },
+  { t: 'Happiness',   icon: 'sun',      note: 'the loud kind, the quiet kind, and the kind that sneaks up on you on an ordinary Tuesday.' },
+  { t: 'Peace',       icon: 'leaf',     note: 'in your mind, your mornings, and the people you choose to keep close.' },
+  { t: 'Good things', icon: 'star',     note: 'the kind you don’t have to chase — the kind that find you, because you’ve earned them.' },
+];
+
+function Wishes() {
+  return (
+    <section className="sec">
+      <div className="wrap">
+        <Reveal><span className="eyebrow">from the letter — into your year ahead</span></Reveal>
+        <Reveal delay={80}><h2 className="sec-title">A few things I hope find you</h2></Reveal>
+        <div className="wish-list">
+          {WISHES.map((w, i) => (
+            <Reveal key={i} className={`wish ${i % 2 ? 'rev' : ''}`} delay={i * 90}>
+              <div className="w-word"><Icon name={w.icon}/><span>{w.t}</span></div>
+              <p className="w-note">{w.note}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   The Gym — because she lives there :D
+============================================================ */
+const REP_MSG = {
+  1:  'one — every streak starts here ✦',
+  5:  'five! honestly, that’s my warm-up too :D',
+  10: 'TEN — that’s a PR. confetti earned 🎉',
+  15: 'fifteen — okay, showing off now',
+  20: 'twenty?! and form still perfect, as expected',
+  30: 'thirty — the bar asked for mercy. you said no.',
+  50: 'fifty?! this is the most cardio I’ve done all year',
+};
+
+function Gym() {
+  const [reps, setReps] = useState(0);
+  const [msg, setMsg] = useState('tap the dumbbell — it counts :D');
+  const [curling, setCurling] = useState(false);
+  const busy = useRef(false);
+
+  const doRep = (e) => {
+    if (busy.current) return;
+    busy.current = true;
+    const n = reps + 1;
+    setReps(n);
+    setMsg(REP_MSG[n] || (n % 10 === 0 ? `${n} — effortless ✦` : 'keep going ✦'));
+    if (n % 10 === 0) {
+      const r = e.currentTarget.getBoundingClientRect();
+      repBurst({ x: (r.left + r.width / 2) / window.innerWidth, y: (r.top + r.height / 2) / window.innerHeight });
+    }
+    setCurling(true);
+    setTimeout(() => { setCurling(false); busy.current = false; }, 720);
+  };
+
+  return (
+    <section className="gym-band">
+      <div className="wrap sec">
+        <Reveal><span className="eyebrow">one more thing — for the girl who lives at the gym</span></Reveal>
+        <Reveal delay={80}><h2 className="sec-title">Strong, <span className="g">in every sense</span> of the word</h2></Reveal>
+
+        <Reveal delay={140}>
+          <div className="gym-stage">
+            <button className="rep-btn" onClick={doRep} aria-label="Do a rep">
+              <svg className={`db ${curling ? 'curling' : ''}`} viewBox="0 0 220 90" aria-hidden="true">
+                <rect x="58" y="39" width="104" height="12" rx="6" fill="#f3d9a4"/>
+                <rect x="60" y="35" width="6" height="20" rx="3" fill="#e8b04b"/>
+                <rect x="154" y="35" width="6" height="20" rx="3" fill="#e8b04b"/>
+                <rect x="42" y="18" width="16" height="54" rx="5" fill="#d97b8a"/>
+                <rect x="20" y="10" width="18" height="70" rx="6" fill="#a84a58"/>
+                <rect x="162" y="18" width="16" height="54" rx="5" fill="#d97b8a"/>
+                <rect x="182" y="10" width="18" height="70" rx="6" fill="#a84a58"/>
+                <rect x="25" y="16" width="4" height="58" rx="2" fill="rgba(244,236,221,.28)"/>
+                <rect x="187" y="16" width="4" height="58" rx="2" fill="rgba(244,236,221,.28)"/>
+              </svg>
+            </button>
+            <div className="rep-count" aria-hidden="true">{reps}</div>
+            <div className="rep-label">reps</div>
+            <p className="rep-msg" aria-live="polite">{msg}</p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="gym-lines">
+            <p>The bar doesn’t care how your day went — and you show up anyway. <span className="g">Life rewards the exact same habit.</span></p>
+            <p>PRs don’t happen on easy days. Neither does growth. You already know the formula better than anyone.</p>
+            <p>You’re not just building muscle — you’re building <span className="g">proof</span>. Proof of what happens when you decide to do a thing.</p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={140}>
+          <p className="gym-close">so when this year gets heavy — you already know the form: breathe, brace, lift. ✦</p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   Finale
+============================================================ */
+function Finale() {
+  const [count, setCount] = useState(0);
+  const [hearts, setHearts] = useState([]);
+  const idRef = useRef(0);
+
+  const send = (e) => {
+    setCount(c => c + 1);
+    const rect = e.currentTarget.getBoundingClientRect();
+    const origin = { x: (rect.left + rect.width / 2) / window.innerWidth, y: rect.top / window.innerHeight };
+    heartBurst(origin);
+
+    const spawned = Array.from({ length: IS_MOBILE() ? 6 : 9 }, () => ({
+      id: ++idRef.current,
+      x: 28 + Math.random() * 44,
+      dx: Math.random() * 140 - 70,
+      rot: Math.random() * 50 - 25,
+      dur: 3.2 + Math.random() * 2,
+      size: 14 + Math.random() * 16,
+      color: ['#f6efe4', '#f3d9a4', '#d97b8a', '#e8b04b'][(Math.random() * 4) | 0],
+    }));
+    setHearts(h => [...h, ...spawned]);
+    spawned.forEach(s => setTimeout(() => setHearts(h => h.filter(x => x.id !== s.id)), s.dur * 1000 + 120));
+  };
+
+  return (
+    <section className="finale sec">
+      <div className="hearts" aria-hidden="true">
+        {hearts.map(h => (
+          <span key={h.id} className="heart"
+            style={{ left: `${h.x}%`, '--dx': `${h.dx}px`, '--rot': `${h.rot}deg`, '--dur': `${h.dur}s` }}>
+            <svg width={h.size} height={h.size} viewBox="0 0 24 24">
+              <path d="M12 21C6 16 2 12.5 2 8.6 2 5.5 4.4 3.5 7 3.5c1.9 0 3.6 1 5 3 1.4-2 3.1-3 5-3 2.6 0 5 2 5 5.1 0 3.9-4 7.4-10 12.4z" fill={h.color}/>
+            </svg>
+          </span>
+        ))}
+      </div>
+      <div className="wrap">
+        <Reveal><h2 className="finale-title">Happy birthday again, <span className="g">Nidhi</span>.</h2></Reveal>
+        <Reveal delay={120}>
+          <p className="finale-sub">Take care of yourself out there — and keep becoming exactly who you want to be. Whenever you need someone in your corner, you already know where to find me. <span className="g">— Hasan</span></p>
+        </Reveal>
+        <Reveal delay={240}>
+          <button className="warm-btn" onClick={send}>{count === 0 ? 'send a little warmth' : 'and a little more ✦'}</button>
+          <p className={`warm-note ${count ? 'show' : ''}`} role="status">delivered — and it’s renewable, whenever you need it.</p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   Page assembly
+============================================================ */
+function Main() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  return (
+    <div className="page">
+      <BarBell/>
+      <Ambient density={20} colors={['#e8b04b', '#f3d9a4']} alpha={.35}/>
+      <Hero/>
+      <Marquee/>
+      <Truths/>
+      <LetterBand/>
+      <Wishes/>
+      <Gym/>
+      <Finale/>
+      <footer className="foot">
+        <p>written by <span className="g">Hasan Jihan</span>, for Nidhi’s birthday ✦ {new Date().getFullYear()}</p>
+      </footer>
+    </div>
+  );
+}
+
+function App() {
+  const [stage, setStage] = useState('cover');
+  const [coverGone, setCoverGone] = useState(false);
+
+  const handleBlown = useCallback(() => {
+    setStage('open');
+    const delays = REDUCED ? [] : [1100, 1600, 2100, 2650, 3200, 3800];
+    delays.forEach(d => setTimeout(fireworkBurst, d));
+  }, []);
+
+  return (
+    <React.Fragment>
+      {stage === 'open' && <Main/>}
+      {!coverGone && <Cover onBlown={handleBlown} onGone={() => setCoverGone(true)}/>}
+    </React.Fragment>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
